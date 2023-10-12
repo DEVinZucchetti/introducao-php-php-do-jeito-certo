@@ -13,10 +13,6 @@
 
     <section class="algoritmos-lista">
         <div class="algoritmo-item">
-            <h2><a href="./pages/frete/frete.html">Frete</a></h2>
-        </div>
-
-        <div class="algoritmo-item">
             <h2><a href="./pages/imc/imc.html">IMC</a></h2>
         </div>
 
@@ -25,20 +21,13 @@
         </div>
 
         <div class="algoritmo-item">
-            <h2><a href="./pages/fgts/fgts.html">FGTS</a></h2>
-        </div>
-        <div class="algoritmo-item">
             <h2><a href="./pages/calculadora/calculadora.html">Calculadora</a></h2>
         </div>
-        <div class="algoritmo-item">
-            <h2><a href="./pages/cartaFerias/cartaFerias.html">Carta férias</a></h2>
-        </div>
+
         <div class="algoritmo-item">
             <h2><a href="./pages/lanchonete/lanchonete.html">Lanchonete</a></h2>
         </div>
-        <div class="algoritmo-item">
-            <h2><a href="./pages/salario/salario.html">Carta Salário</a></h2>
-        </div>
+
     </section>
 
     <footer>
