@@ -1,36 +1,56 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmos</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
-    <h1 class="main-title">Algoritmos</h1>
+<div class="container centralizado">
+    <div class="algoritmo-item">
+    <?php
+$valor1 = filter_input(INPUT_POST, 'valor1', FILTER_VALIDATE_FLOAT); // Use FILTER_VALIDATE_FLOAT para números com decimais
+$valor2 = filter_input(INPUT_POST, 'valor2', FILTER_VALIDATE_FLOAT); // Use FILTER_VALIDATE_FLOAT para números com decimais
+$operador = filter_input(INPUT_POST, 'operacao');
 
-    <section class="algoritmos-lista">
-        <div class="algoritmo-item">
-            <h2><a href="./pages/imc/imc.html">IMC</a></h2>
-        </div>
+function calculo($valor1, $valor2, $operador)
+{   
+        if ($operador === '+') {
+            $resultado = $valor1 + $valor2;
+        } elseif ($operador === '-') {
+            $resultado = $valor1 - $valor2;
+        } elseif ($operador === '*') {
+            $resultado = $valor1 * $valor2;
+        } elseif ($operador === '/') {
+            if ($valor2 != 0) { 
+                $resultado = $valor1 / $valor2;
+            } else {
+                echo "Divisão por zero não é permitida" . "<br />";
+            }
+        }
 
-        <div class="algoritmo-item">
-            <h2><a href="./pages/media/media.html">Média</a></h2>
-        </div>
+        echo "$valor1 $operador $valor2 = $resultado" . "<br />";
+    
+}
 
-        <div class="algoritmo-item">
-            <h2><a href="./pages/calculadora.php">Calculadora</a></h2>
-        </div>
+if ($valor1 !== null && $valor2 !== null && in_array($operador, ['+', '-', '*', '/'])) {
+    calculo($valor1, $valor2, $operador);
+} else {
+    echo "Valores inválidos ou operador inválido";
+}
+?>
 
-        <div class="algoritmo-item">
-            <h2><a href="./pages/lanchonete/lanchonete.html">Lanchonete</a></h2>
-        </div>
+    </div>
 
-    </section>
 
-    <footer>
+<div class="algoritmo-item">
+<a href="./calculadora.php">Fazer outra</a>
+</div>
+</div>
+</body>
+
+<footer>
         <div class="footer-content center-text">
           <div class="social-media">
             <a href="https://github.com/MarcelCNoronha" target="_blank" rel="noopener noreferrer">
@@ -50,7 +70,4 @@
           </div>
         </div>
       </footer>
-
-</body>
-
 </html>

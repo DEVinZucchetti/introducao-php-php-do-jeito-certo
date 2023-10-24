@@ -2,6 +2,21 @@ body {
     background: linear-gradient(to right, #cddfed, #cddfed);
 }
 
+.container {
+    display: flex;
+    padding: 10%;
+    margin: 10%;
+    text-align: center;
+    width: 90%;
+}
+
+.centralizado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .main-title {
     text-align: center;
 }

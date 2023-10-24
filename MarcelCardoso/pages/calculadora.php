@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algoritmos</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
-
 <body>
-    <h1 class="main-title">Algoritmos</h1>
-
-    <section class="algoritmos-lista">
+<div class="container centralizado">
+    <h1 class="main-title">Calculadora</h1>
+    <form method="post" action="resultado.php" class="container centralizado">
         <div class="algoritmo-item">
-            <h2><a href="./pages/imc/imc.html">IMC</a></h2>
+            <label class="centralizado">Entre com o primeiro valor: </label>
+            <input class="centralizado" type="number" name="valor1">
         </div>
-
         <div class="algoritmo-item">
-            <h2><a href="./pages/media/media.html">Média</a></h2>
+            <label>Entre com o segundo valor: </label>
+            <input class="centralizado" type="number" name="valor2">
         </div>
-
         <div class="algoritmo-item">
-            <h2><a href="./pages/calculadora.php">Calculadora</a></h2>
+            <label>Selecione a operação: </label>
+            <select name="operacao">
+                <option value="+">Soma</option>
+                <option value="-">Subtração</option>
+                <option value="*">Multiplicação</option>
+                <option value="/">Divisão</option>
+                <option value="exponencial">Exponencial</option>
+            </select>
         </div>
-
         <div class="algoritmo-item">
-            <h2><a href="./pages/lanchonete/lanchonete.html">Lanchonete</a></h2>
+            <button type="submit">Calcular</button>
         </div>
+    </form>
+</div>
+</body>
 
-    </section>
-
-    <footer>
+<footer>
         <div class="footer-content center-text">
           <div class="social-media">
             <a href="https://github.com/MarcelCNoronha" target="_blank" rel="noopener noreferrer">
@@ -50,7 +55,4 @@
           </div>
         </div>
       </footer>
-
-</body>
-
 </html>
