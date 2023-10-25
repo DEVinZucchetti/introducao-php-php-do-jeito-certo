@@ -17,7 +17,7 @@
         </div>
 
         <div class="algoritmo-item">
-            <h2><a href="./pages/media/media.html">Média</a></h2>
+            <h2><a href="./pages/media.php">Média</a></h2>
         </div>
 
         <div class="algoritmo-item">
