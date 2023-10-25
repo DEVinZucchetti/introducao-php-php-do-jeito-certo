@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container centralizado">
-    <div class="algoritmo-item">
+    <div>
     <?php
 $valor1 = filter_input(INPUT_POST, 'valor1', FILTER_VALIDATE_FLOAT); // Use FILTER_VALIDATE_FLOAT para números com decimais
 $valor2 = filter_input(INPUT_POST, 'valor2', FILTER_VALIDATE_FLOAT); // Use FILTER_VALIDATE_FLOAT para números com decimais

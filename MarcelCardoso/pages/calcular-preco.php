@@ -3,34 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lanchonete</title>
+    <title>Calculadora</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <div class="container centralizado">
-    <h1 class="main-title">Lanchonete</h1>
-    <form method="post" action="calcular-preco.php" class="container centralizado">
     <div class="algoritmo-item">
-            <label>Selecione o produto: </label>
-            <select name="codigo">
-                <option value="Coxinha">Coxinha</option>
-                <option value="Quibe">Quibe</option>
-                <option value="Hamburguer">Hamburguer</option>
-                <option value="Sanduiche Natural">Sanduiche Natural</option>
-                <option value="Esfira">Esfira</option>
-                <option value="Pastel">Pastel</option>
-            </select>
-        </div>
+    <?php
 
-        <div class="algoritmo-item">
-            <label class="centralizado">Quantidade: </label>
-            <input class="centralizado" type="number" name="quantidade">
-        </div>
+    $codigo = filter_input(INPUT_POST, 'codigo'); 
+    $quantidade = filter_input(INPUT_POST, 'quantidade', FILTER_VALIDATE_FLOAT); 
 
-        <div class="algoritmo-item">
-            <button type="submit">Calcular</button>
-        </div>
-    </form>
+    if ($codigo !== null && $quantidade !== null) {
+        identificarProduto($codigo, $quantidade);
+    } else {
+        echo "Valores inválidos ou operador inválido";
+    }
+
+    function calcularPreco($valorCodigo, $quantidade, $codigo) {
+        $valorTotal = $valorCodigo * $quantidade;
+        echo "Você pediu $quantidade $codigo </br>
+        Valor a ser pago: R$ $valorTotal";
+    }
+
+    function identificarProduto($codigo, $quantidade){
+        switch ($codigo) {
+            case "Coxinha":
+                calcularPreco(1.20, $quantidade, $codigo);
+                break;
+            case "Quibe":
+                calcularPreco(1.30, $quantidade, $codigo);
+                break;
+            case "Hamburguer":
+                calcularPreco(1.50, $quantidade, $codigo);
+                break;
+            case "Sanduiche Natural":
+                calcularPreco(1.20, $quantidade, $codigo);
+                break;
+            case "Esfira":
+                calcularPreco(1.30, $quantidade, $codigo);
+                break;
+            case "Pastel":
+                calcularPreco(1.0, $quantidade, $codigo);
+                break;
+            default:
+                echo "Código inválido";
+
+    }
+
+    }
+
+    ?>
+    </div>
+
+    <div class="algoritmo-item">
+    <a href="./lanchonete.php">Comprar mais</a>
+    </div>
 </div>
 </body>
 
@@ -55,3 +83,12 @@
         </div>
       </footer>
 </html>
+
+
+
+
+
+
+
+
+
